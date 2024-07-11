@@ -5,7 +5,7 @@
 <template>
 
 <!-- <toolbar -->
-<!-- #header -->
+<!-- #sip&play -->
 
 <!-- categories -->
 <!-- all items -->
