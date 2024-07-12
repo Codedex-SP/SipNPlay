@@ -386,7 +386,6 @@ export default {
        
           this.categories = Object.keys(response.menu);
           this.menu = response.menu;
-          this.setFeaturedItem();
        
     },
     getPrice(item) {
@@ -452,11 +451,8 @@ export default {
       }
     },
     load3DModel() {
-      console.log('Loading 3D model/src.');
-      if (!this.$refs.container) {
-        console.error('3D model container not found');
-        return;
-      }
+    
+    const container = this.$refs.container;
 
       let scene, camera, renderer, controls;
 
@@ -541,4 +537,5 @@ export default {
   white-space: pre-line;
 }
 </style>
+
 
