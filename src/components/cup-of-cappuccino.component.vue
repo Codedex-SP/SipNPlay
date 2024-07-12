@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { ref, onMounted } from 'vue';
+import cupModel from './../assets/cup_of_cappuccino.glb?url';
 
 const container = ref(null);
 let scene, camera, renderer, controls;
@@ -47,7 +48,7 @@ function loadModel() {
   }
 
   const loader = new GLTFLoader();
-  loader.load('src/assets/cup_of_cappuccino.glb', function (gltf) {
+  loader.load(cupModel, function (gltf) {
     gltf.scene.scale.set(7, 7, 7);
     gltf.scene.position.set(0, -0.2, 0);
     scene.add(gltf.scene);
