@@ -1,52 +1,55 @@
 <template>
-  <div class="container">
-    <div class="left">
-
-      <div class="month">
-        <i class="fas fa-angle-left prev" @click="prevMonth">&#10094;</i>
-        <div class="date">{{ currentMonth }}</div>
-        <i class="fas fa-angle-right next" @click="nextMonth">&#10095;</i>
+  <div class="container mx-auto p-5 flex flex-col items-center">
+    <div class="calendar-box w-full max-w-4xl p-5 bg-white shadow-md rounded-lg mb-5">
+      <div class="month flex justify-between items-center mb-5">
+        <i class="fas fa-angle-left prev cursor-pointer" @click="prevMonth">&#10094;</i>
+        <div class="date text-2xl">{{ currentMonth }}</div>
+        <i class="fas fa-angle-right next cursor-pointer" @click="nextMonth">&#10095;</i>
       </div>
-
       <div class="calendar">
-        <div class="weekdays">
+        <div class="weekdays grid grid-cols-7 gap-1 text-center mb-2">
           <div v-for="weekday in weekdays" :key="weekday">{{ weekday }}</div>
         </div>
-
-        <div class="days">
-          <div v-for="day in calendarDays" :key="day.date" :class="{
-            'day': true,
-            'prev-date': day.prevMonth,
-            'next-date': day.nextMonth,
-            'active': day.active,
-            'event': day.hasEvent
-          }" @click="setActiveDay(day)">
+        <div class="days grid grid-cols-7 gap-1">
+          <div
+              v-for="day in calendarDays"
+              :key="day.date"
+              :class="{
+              'day': true,
+              'prev-date': day.prevMonth,
+              'next-date': day.nextMonth,
+              'active': day.active,
+              'event': day.hasEvent
+            }"
+              @click="setActiveDay(day)"
+          >
             {{ day.date }}
           </div>
         </div>
-
       </div>
     </div>
 
-    <div class="right">
-      <div v-if="activeEvent" class="today-date">
-        <div class="event-day">{{ activeEvent.day }}</div>
-        <div class="event-date">{{ activeEvent.date }}</div>
+    <div class="events-box w-full max-w-4xl p-5 bg-white shadow-md rounded-lg">
+      <div v-if="activeEvent" class="today-date mb-5">
+        <div class="event-day text-lg">{{ activeEvent.day }}</div>
+        <div class="event-date text-sm">{{ activeEvent.date }}</div>
       </div>
 
       <div class="events">
         <div v-if="activeEvent">
-          <div v-for="event in activeEvent.events" :key="event.title" class="event">
-            <div class="title">
-              <i class="fas fa-circle"></i>
-              <h3 class="event-title">{{ event.title }}</h3>
+          <div
+              v-for="event in activeEvent.events"
+              :key="event.title"
+              class="event flex justify-between items-center mb-2 p-2 bg-gray-100 rounded-lg shadow"
+          >
+            <div class="title flex items-center">
+              <i class="fas fa-circle text-primary-clr mr-2"></i>
+              <h3 class="event-title text-lg font-semibold">{{ event.title }}</h3>
             </div>
-            <div class="event-time">
-              <span>{{ event.time }}</span>
-            </div>
+            <div class="event-time text-gray-500">{{ event.time }}</div>
           </div>
         </div>
-        <div v-else class="no-event">
+        <div v-else class="no-event text-center text-gray-500">
           <h3>No Events</h3>
         </div>
       </div>
@@ -61,11 +64,11 @@ export default {
   name: 'App',
   setup() {
     const months = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
     ];
 
-    const weekdays = ref(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]);
+    const weekdays = ref(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']);
     const calendarDays = ref([]);
     const dateInput = ref('');
     const activeEvent = ref(null);
@@ -76,12 +79,12 @@ export default {
 
     const eventsArr = [
       {
-        day: 11,
-        month: 7, // 11 corresponds to December (since months are zero-indexed)
+        day: 12,
+        month: 7,
         year: 2024,
         events: [
-          {title: "Event 1", time: "10:00 AM"},
-          {title: "Event 2", time: "11:00 AM"}
+          { title: 'Event 1', time: '10:00 AM' },
+          { title: 'Event 2', time: '11:00 AM' }
         ]
       }
     ];
@@ -153,10 +156,10 @@ export default {
         month.value = 11;
         year.value--;
       }
-      calendarDays.value = []; // Clear days
-      weekdays.value = []; // Clear weekdays
+      calendarDays.value = [];
+      weekdays.value = [];
       setTimeout(() => {
-        weekdays.value = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; // Reset weekdays
+        weekdays.value = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         initCalendar();
       }, 0);
     }
@@ -168,9 +171,9 @@ export default {
         year.value++;
       }
       calendarDays.value = []; // Clear days
-      weekdays.value = []; // Clear weekdays
+      weekdays.value = [];
       setTimeout(() => {
-        weekdays.value = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; // Reset weekdays
+        weekdays.value = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         initCalendar();
       }, 0);
     }
@@ -193,7 +196,6 @@ export default {
 </script>
 
 <style>
-
 :root {
   --primary-clr: #ff7900;
   --orange-2: #FF983A;
@@ -215,6 +217,7 @@ body {
   justify-content: center;
   padding: 20px;
 }
+
 .container {
   position: inherit;
   width: 1200px;
@@ -226,10 +229,7 @@ body {
   border-radius: 10px;
   background-color: #373c4f;
 }
-.left {
-  width: 60%;
-  padding: 20px;
-}
+
 .calendar {
   position: relative;
   display: flex;
@@ -260,29 +260,33 @@ body {
 .month .next {
   cursor: pointer;
 }
+
 .month .prev:hover,
 .month .next:hover {
   color: var(--primary-clr);
 }
+
 .calendar .weekdays {
   width: 100%;
   height: 100px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   padding: 0 20px;
   font-size: 24px;
   font-family: 'Nunito', sans-serif;
 }
+
 .weekdays div {
-  width: 14.28%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .calendar .days {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(auto-fit, minmax(auto, auto));
   padding: 0 20px;
   font-size: 24px;
   font-family: 'Nunito', sans-serif;
@@ -291,11 +295,8 @@ body {
 }
 
 .calendar .days .day {
-  width: 14.28%;
-  height: 90px;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  height: 60px;
   cursor: pointer;
   color: #FFFFFF;
   background-color: #FFAD62;
@@ -303,11 +304,19 @@ body {
   border-radius: 10px;
 }
 
+.days div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .calendar .days .day:not(.prev-date, .next-date):hover {
   color: #fff;
   background-color: var(--primary-clr);
 }
-.calendar .days .prev-date,
+
+calendar .days .prev-date,
 .calendar .days .next-date {
   color: rgb(228, 226, 223);
 }
@@ -351,35 +360,37 @@ body {
 .calendar .days .active.event {
   padding-bottom: 10px;
 }
-.container .right {
+
+.events-box {
   position: relative;
-  width: 40%;
-  min-height: 100%;
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #000000;
+  border-radius: 12px;
+  border: 5px solid #FFAD62;
+  background: linear-gradient(to right, rgb(255, 237, 169) 1%, #FFFFFF 100%);
+  margin-bottom: 30px;
+  padding: 20px;
 }
 
-.right .today-date {
-  width: 100%;
-  height: 50px;
+.events-box .today-date {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 40px 0 70px;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  text-transform: capitalize;
+  margin-bottom: 30px;
 }
-.right .today-date .event-day {
-  font-size: 2rem;
-  font-weight: 500;
+
+.today-date .event-day {
+  font-size: 24px;
+  font-family: 'Nunito', sans-serif;
 }
-.right .today-date .event-date {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #878895;
+
+.today-date .event-date {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  color: #6B6B6B;
 }
+
 .events {
   width: 100%;
   height: 100%;
@@ -390,20 +401,19 @@ body {
   flex-direction: column;
   padding-left: 4px;
 }
+
 .events .event {
-  position: relative;
-  width: 95%;
-  min-height: 70px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  padding: 0 20px 0 50px;
-  color: #fff;
-  background: linear-gradient(90deg, #3f4458, transparent);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(90deg, var(--primary-clr), transparent);
   cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  margin-bottom: 15px;
 }
-/* even event */
+
 .events .event:nth-child(even) {
   background: transparent;
 }
@@ -434,10 +444,11 @@ body {
   margin-left: 15px;
   pointer-events: none;
 }
-.events .event:hover .event-time {
-  color: #fff;
+
+.events .event .event-time {
+  color: #FFFFFF;
 }
-/* add tick in event after */
+
 .events .event::after {
   content: "✓";
   position: absolute;
@@ -455,6 +466,7 @@ body {
 .events .event:hover::after {
   display: flex;
 }
+
 .events .no-event {
   width: 100%;
   height: 100%;
@@ -465,62 +477,86 @@ body {
   font-weight: 500;
   color: #878895;
 }
+
 /* media queries */
 
-@media screen and (max-width: 1000px) {
-  body {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
+/* Media query para dispositivos medianos (tablets) */
+@media (max-width: 768px) {
   .container {
-    min-height: 100vh;
-    flex-direction: column;
-    border-radius: 0;
+    width: 90%;
+    padding: 10px;
   }
-  .container .left {
-    width: 100%;
-    height: 100%;
-    padding: 20px 0;
+
+  .month {
+    padding: 0 20px;
+    font-size: 24px;
+    height: 80px;
+    margin-bottom: 20px;
   }
-  .container .right {
-    width: 100%;
-    height: 100%;
-    padding: 20px 0;
+
+  .weekdays div,
+  .days .day {
+    font-size: 20px;
   }
-  .calendar::before,
-  .calendar::after {
-    top: 100%;
-    left: 50%;
-    width: 97%;
-    height: 12px;
-    border-radius: 0 0 5px 5px;
-    transform: translateX(-50%);
+
+  .days .day {
+    height: auto;
   }
-  .calendar::before {
-    width: 94%;
-    top: calc(100% + 12px);
+
+  .event-day {
+    font-size: 24px;
   }
-  .events {
-    padding-bottom: 340px;
+
+  .event-date {
+    font-size: 18px;
   }
-}
-@media screen and (max-width: 500px) {
-  .calendar .month {
-    height: 75px;
+
+  .event-title {
+    font-size: 16px;
   }
-  .calendar .weekdays {
-    height: 50px;
-  }
-  .calendar .days .day {
-    height: 40px;
-    font-size: 0.8rem;
-  }
-  .calendar .days .day.active{
-    font-size: 1rem;
-  }
-  .right .today-date {
-    padding: 20px;
+
+  .event-time {
+    font-size: 14px;
   }
 }
 
+/* Media query para dispositivos pequeños (smartphones) */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .month {
+    padding: 0 10px;
+    font-size: 20px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .weekdays div,
+  .days .day {
+    font-size: 16px;
+  }
+
+  .days .day {
+    height: auto;
+  }
+
+  .event-day {
+    font-size: 20px;
+  }
+
+  .event-date {
+    font-size: 16px;
+  }
+
+  .event-title {
+    font-size: 14px;
+  }
+
+  .event-time {
+    font-size: 12px;
+  }
+}
 </style>
