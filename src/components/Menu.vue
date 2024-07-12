@@ -112,7 +112,7 @@ const menuData = {
           "cold": 5.25
         },
         "description": "Espresso with steamed milk.",
-        "image": "/src/assets/img/foods/latte.png"
+        "image": "/src/assets/latte.png"
       },
       {
         "id": 2,
@@ -121,7 +121,7 @@ const menuData = {
           "hot": 4.50
         },
         "description": "Espresso with steamed milk and a layer of foam.",
-        "image": "/src/assets/img/foods/cappuccino.png"
+        "image": "/src/assets/cappuccino.png"
       },
       {
         "id": 3,
@@ -131,7 +131,7 @@ const menuData = {
           "cold": 4.25
         },
         "description": "Espresso diluted with hot water.",
-        "image": "/src/assets/img/foods/americano.png"
+        "image": "/src/assets/americano.png"
       }
     ],
     "specialty_drinks": [
@@ -143,7 +143,7 @@ const menuData = {
           "cold": 6.25
         },
         "description": "Latte with a subtle rose flavor.",
-        "image": "/src/assets/img/foods/rosse_latte.png"
+        "image": "/src/assets/rosse_latte.png"
       },
       {
         "id": 10,
@@ -153,7 +153,7 @@ const menuData = {
           "cold": 5.50
         },
         "description": "A spiced tea latte made with a blend of spices.",
-        "image": "/src/assets/img/foods/chai.png"
+        "image": "/src/assets/chai.png"
       },
       {
         "id": 11,
@@ -163,7 +163,7 @@ const menuData = {
           "cold": 5.75
         },
         "description": "Green tea latte made with matcha powder.",
-        "image": "/src/assets/img/foods/matcha_latte.png"
+        "image": "/src/assets/matcha_latte.png"
       }
     ],
     "boba": [
@@ -176,7 +176,7 @@ const menuData = {
           "Hot": 5.25
         },
         "description": "Classic milk tea made with black tea.",
-        "image": "/src/assets/img/foods/black_milk_tea.png"
+        "image": "/src/assets/black_milk_tea.png"
       },
       {
         "id": 19,
@@ -187,7 +187,7 @@ const menuData = {
           "Hot": 5.75
         },
         "description": "Caffeine free, made with taro flavor.",
-        "image": "/src/assets/img/foods/taro_milk_tea.png"
+        "image": "/src/assets/taro_milk_tea.png"
       },
       {
         "id": 20,
@@ -198,7 +198,7 @@ const menuData = {
           "Hot": 5.25
         },
         "description": "Caffeine free, made with Thai tea flavor.",
-        "image": "/src/assets/img/foods/thai_milk_tea.png"
+        "image": "/src/assets/thai_milk_tea.png"
       }
     ],
     "sandwiches_salads": [
@@ -215,7 +215,7 @@ const menuData = {
           "Italian herb focaccia",
           "chips"
         ],
-        "image": "/src/assets/img/foods/pizza_panini.png"
+        "image": "/src/assets/pizza_panini.png"
       },
       {
         "id": 37,
@@ -227,7 +227,7 @@ const menuData = {
           "tomato",
           "vegan"
         ],
-        "image": "/src/assets/img/foods/mixed_green_salad.png"
+        "image": "/src/assets/mixed_green_salad.png"
       },
       {
         "id": 38,
@@ -243,7 +243,7 @@ const menuData = {
           "toasted heritage wheat",
           "side salad"
         ],
-        "image": "/src/assets/img/foods/avocado_toast.png"
+        "image": "/src/assets/avocado_toast.png"
       }
     ],
     "hot_bites": [
@@ -252,21 +252,21 @@ const menuData = {
         "name": "Chicken Poppers",
         "price": 6,
         "description": "Crispy chicken bites.",
-        "image": "/src/assets/img/foods/chicken_poppers.png"
+        "image": "/src/assets/chicken_poppers.png"
       },
       {
         "id": 26,
         "name": "Fries",
         "price": 5,
         "description": "Crispy seasoned fries.",
-        "image": "/src/assets/img/foods/fries.png"
+        "image": "/src/assets/fries.png"
       },
       {
         "id": 27,
         "name": "Pigs in a Blanket",
         "price": 7,
         "description": "Mini hot dogs wrapped in dough.",
-        "image": "/src/assets/img/foods/pigs_in_a_blanket.png"
+        "image": "/src/assets/pigs_in_a_blanket.png"
       }
     ],
     "seasonal_menu": [
@@ -278,7 +278,7 @@ const menuData = {
           "Large": 5.75
         },
         "description": "Our coconut boba with pineapple flavor.",
-        "image": "/src/assets/img/foods/pina_colada.png"
+        "image": "/src/assets/pina_colada.png"
       },
       {
         "id": 46,
@@ -288,7 +288,7 @@ const menuData = {
           "Large": 6
         },
         "description": "Our freshly squeezed lemonade with a balance of an earthy shot of matcha.",
-        "image": "/src/assets/img/foods/matcha_lemonade.png"
+        "image": "/src/assets/matcha_lemonade.png"
       },
       {
         "id": 47,
@@ -298,7 +298,7 @@ const menuData = {
           "Large": 6
         },
         "description": "Made with real fruit juice and fruit slices!",
-        "image": "/src/assets/img/foods/citrus_boba.png"
+        "image": "/src/assets/citrus_boba.png"
       }
     ],
     "beer_wine": [
@@ -307,21 +307,21 @@ const menuData = {
         "name": "Babe Rose",
         "price": 18.99,
         "description": "Light and refreshing rosé wine.",
-        "image": "/src/assets/img/foods/babe_rose.png"
+        "image": "/src/assets/babe_rose.png"
       },
       {
         "id": 53,
         "name": "Archer Roose White",
         "price": 22.50,
         "description": "Crisp and refreshing white wine.",
-        "image": "/src/assets/img/foods/archer_roose_white.png"
+        "image": "/src/assets/archer_roose_white.png"
       },
       {
         "id": 54,
         "name": "Allagash White",
         "price": 25.75,
         "description": "Rich and bold white beer.",
-        "image": "/src/assets/img/foods/allagash_white.png"
+        "image": "/src/assets/allagash_white.png"
       }
     ]
   }
@@ -433,10 +433,10 @@ export default {
     },
 
     getCategoryIcon(category) {
-      return `/src/assets/img/categories/${category}.png`;
+      return `/src/assets/${category}.png`;
     },
     getIngredientIcon(ingredient) {
-      return `/src/assets/ingredients/${ingredient}.png`;
+      return `/src/assets/${ingredient}.png`;
     },
     formatCategoryName(category) {
       return category.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -484,7 +484,7 @@ export default {
         const glbFileName = this.featuredItem.name.toLowerCase().replace(/\s+/g, '_');
         console.log('GLB file name:', glbFileName);
 
-        loader.load(`/src/assets/img/foods/${glbFileName}.glb`, function (gltf) {
+        loader.load(`/src/assets/${glbFileName}.glb`, function (gltf) {
 
           scene.add(gltf.scene);
 
