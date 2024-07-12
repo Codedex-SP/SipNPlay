@@ -6,14 +6,14 @@ import Cappuccino from './cup-of-cappuccino.component.vue';
   <div class="header flex flex-row justify-center p-4 pt-32 gap-8 bg-orange-300 sm:flex-wrap">
     <div>
       <div class="phrase">
-        <h1 class="eat text-left drop-shadow-lg">EAT,</h1>
-        <h1 class="play text-left drop-shadow-lg">PLAY,</h1>
-        <h1 class="connect text-left drop-shadow-lg">CONNECT!</h1>
+        <h1 class="eat text-left text-5xl drop-shadow-lg">EAT,</h1>
+        <h1 class="play text-left text-5xl drop-shadow-lg">PLAY,</h1>
+        <h1 class="connect text-left text-5xl drop-shadow-lg">CONNECT!</h1>
       </div>
       <p class="text-wrap max-w-64 text-left my-5">Discover a new place where you can have a good time while enjoying a delicious meal</p>
       <div class="flex flex-row gap-2.5 drop-shadow-md text-lime-300 mt-3">
-        <button class="rounded-full border-lime-300 border-2 hover:border-transparent focus:outline-none bg-white">Menu</button>
-        <button class="rounded-full border-lime-300 border-2 hover:border-transparent focus:outline-none bg-white">Event's Calendar</button>
+        <button class="rounded-full border-lime-300 border-2 px-4 py-1 hover:border-transparent focus:outline-none bg-white">Menu</button>
+        <button class="rounded-full border-lime-300 border-2 px-4 py-1 hover:border-transparent focus:outline-none bg-white">Event's Calendar</button>
       </div>
     </div>
     <div>
@@ -58,6 +58,15 @@ img {
   .phrase {
     max-width: 200px;
     font-size: 11px;
+  }
+  .eat {
+    font-size: 40px;
+  }
+  .play {
+    font-size: 40px;
+  }
+  .connect {
+    font-size: 40px;
   }
 }
 </style>

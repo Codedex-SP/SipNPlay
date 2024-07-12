@@ -48,7 +48,7 @@ function loadModel() {
 
   const loader = new GLTFLoader();
   loader.load('src/assets/models/cup_of_cappuccino.glb', function (gltf) {
-    gltf.scene.scale.set(6, 6, 6);
+    gltf.scene.scale.set(7, 7, 7);
     gltf.scene.position.set(0, -0.2, 0);
     scene.add(gltf.scene);
     model = gltf.scene;

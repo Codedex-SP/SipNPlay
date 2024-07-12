@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <nav class="bg-orange-300 drop-shadow-lg flex-none p-0 m-3 rounded-lg md:flex">
+    <nav class="toolbar bg-orange-300 drop-shadow-lg flex-none p-0 py-2 m-3 rounded-lg md:flex">
       <div class="container mx-auto flex items-center justify-between">
         <button class="text-white text-3xl bg-inherit rounded-full hover:border-transparent focus:outline-none animate" >
           <img src="/src/assets/images/hamburger_burger.svg" class="h-11 w-auto" alt="Hamburger Icon">
@@ -36,5 +36,10 @@
 
 .animate:hover {
   transform: scale(1.1);
+}
+
+.toolbar {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 </style>
