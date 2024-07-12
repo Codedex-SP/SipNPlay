@@ -40,7 +40,7 @@ onMounted(() => {
             <textarea id="feedback" name="feedback" class="input" required></textarea>
             <label for="feedback" class="input-placeholder">Feedback</label>
           </div>
-          <button type="submit" class="text-white bg-lime-300">Send</button>
+          <button type="submit" class="text-white bg-lime-300 rounded-2xl p-2">Send</button>
         </div>
       </div>
     </div>
