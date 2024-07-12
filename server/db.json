@@ -15,8 +15,7 @@
                 "id": 2,
                 "name": "Cappuccino",
                 "price": {
-                    "hot": 5.25,
-                    "cold": 5.75
+                    "hot": 4.50
                 },
                 "description": "Espresso with steamed milk and a layer of foam.",
                 "image": "/src/assets/img/foods/cappuccino.png"
@@ -64,37 +63,39 @@
                 "image": "/src/assets/img/foods/matcha_latte.png"
             }
         ],
-       
         "boba": [
             {
                 "id": 18,
-                "name": "The OG",
+                "name": "Black Milk Tea",
                 "price": {
                     "Medium": 4.25,
                     "Large": 5.25,
                     "Hot": 5.25
                 },
-                "description": "Classic milk tea."
+                "description": "Classic milk tea made with black tea.",
+                "image": "/src/assets/img/foods/black_milk_tea.png"
             },
             {
                 "id": 19,
-                "name": "Brown Sugar Boba",
+                "name": "Taro Milk Tea",
                 "price": {
                     "Medium": 4.75,
                     "Large": 5.75,
                     "Hot": 5.75
                 },
-                "description": "Caffeine free, made with brown sugar syrup."
+                "description": "Caffeine free, made with taro flavor.",
+                "image": "/src/assets/img/foods/taro_milk_tea.png"
             },
             {
                 "id": 20,
-                "name": "Taro Boba Cononut Boba",
+                "name": "Thai Milk Tea",
                 "price": {
                     "Medium": 4.25,
                     "Large": 5.25,
                     "Hot": 5.25
                 },
-                "description": "Caffeine free, dairy free, made with taro flavor."
+                "description": "Caffeine free, made with Thai tea flavor.",
+                "image": "/src/assets/img/foods/thai_milk_tea.png"
             }
         ],
         "sandwiches_salads": [
@@ -147,68 +148,78 @@
                 "id": 25,
                 "name": "Chicken Poppers",
                 "price": 6,
-                "description": "Crispy chicken bites."
+                "description": "Crispy chicken bites.",
+                "image": "/src/assets/img/foods/chicken_poppers.png"
             },
             {
                 "id": 26,
-                "name": "Mozz Sticks",
-                "price": 7,
-                "description": "Fried mozzarella sticks."
+                "name": "Fries",
+                "price": 5,
+                "description": "Crispy seasoned fries.",
+                "image": "/src/assets/img/foods/fries.png"
             },
             {
                 "id": 27,
                 "name": "Pigs in a Blanket",
                 "price": 7,
-                "description": "Mini hot dogs wrapped in dough."
+                "description": "Mini hot dogs wrapped in dough.",
+                "image": "/src/assets/img/foods/pigs_in_a_blanket.png"
             }
         ],
         "seasonal_menu": [
-            {
-                "id": 45,
-                "name": "Pina Colada",
-                "price": {
-                    "Medium": 4.75,
-                    "Large": 5.75
-                },
-                "description": "Our coconut boba with pineapple flavor."
+        {
+            "id": 45,
+            "name": "Pina Colada",
+            "price": {
+                "Medium": 4.75,
+                "Large": 5.75
             },
-            {
-                "id": 46,
-                "name": "Matcha Lemonade",
-                "price": {
-                    "Medium": 5,
-                    "Large": 6
-                },
-                "description": "Our freshly squeezed lemonade with a balance of an earthy shot of matcha."
+            "description": "Our coconut boba with pineapple flavor.",
+            "image": "/src/assets/img/foods/pina_colada.png"
+        },
+        {
+            "id": 46,
+            "name": "Matcha Lemonade",
+            "price": {
+                "Medium": 5,
+                "Large": 6
             },
-            {
-                "id": 47,
-                "name": "Yuzu-Ade",
-                "price": {
-                    "Large": 5.25
-                },
-                "description": "Popular in South Korea, Yuzu-Ade is a carbonated drink with yuzu marmalade. Yuzu is a citrus with a tart and fragrant flavor of orange and grapefruit."
-            }
-        ],
-        "beer_wine": [
-            {
-                "id": 52,
-                "name": "Babe Rose",
-                "price": 18.99,
-                "description": "Light and refreshing rosé wine."
+            "description": "Our freshly squeezed lemonade with a balance of an earthy shot of matcha.",
+            "image": "/src/assets/img/foods/matcha_lemonade.png"
+        },
+        {
+            "id": 47,
+            "name": "Citrus Boba",
+            "price": {
+                "Medium": 5,
+                "Large": 6
             },
-            {
-                "id": 53,
-                "name": "Archer Roose White",
-                "price": 22.50,
-                "description": "Crisp and refreshing white wine."
-            },
-            {
-                "id": 54,
-                "name": "Archer Roose Red",
-                "price": 25.75,
-                "description": "Rich and bold red wine."
-            }
-        ]
+            "description": "Made with real fruit juice and fruit slices!",
+            "image": "/src/assets/img/foods/citrus_boba.png"
+        }
+    ],
+    "beer_wine": [
+        {
+            "id": 52,
+            "name": "Babe Rose",
+            "price": 18.99,
+            "description": "Light and refreshing rosé wine.",
+            "image": "/src/assets/img/foods/babe_rose.png"
+        },
+        {
+            "id": 53,
+            "name": "Archer Roose White",
+            "price": 22.50,
+            "description": "Crisp and refreshing white wine.",
+            "image": "/src/assets/img/foods/archer_roose_white.png"
+        },
+        {
+            "id": 54,
+            "name": "Allagash White",
+            "price": 25.75,
+            "description": "Rich and bold white beer.",
+            "image": "/src/assets/img/foods/allagash_white.png"
+        }
+    ]
     }
 }
