@@ -1,5 +1,5 @@
 <script setup>
-
+import Feedback from "./components/feedback.component.vue";
 </script>
 
 <template>
@@ -14,7 +14,7 @@
 <!-- events(calendar) -->
 <!-- list of events -->
 
-<!-- feedback -->
+<Feedback/>
 <!-- footer -->
   
 </template>
