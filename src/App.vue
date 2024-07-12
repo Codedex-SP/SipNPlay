@@ -8,8 +8,6 @@ import MainPage from "./pages/main-page.vue";
   <toolbar/>
 
   <main-page/>
-  <EventsCalendar/>
-
   <Footer/>
 
 </template>

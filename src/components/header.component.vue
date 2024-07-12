@@ -3,7 +3,7 @@ import Cappuccino from './cup-of-cappuccino.component.vue';
 </script>
 
 <template>
-  <div class="header flex flex-row justify-center p-4 pt-32 gap-8 bg-orange-300 sm:flex-wrap">
+  <div class="header  flex flex-row justify-center p-4 pt-32 gap-8 bg-orange-300 sm:flex-wrap">
     <div>
       <div class="phrase">
         <h1 class="eat text-left text-5xl drop-shadow-lg">EAT,</h1>
