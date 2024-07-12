@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-row text-left justify-center bg-black">
+  <div class="feedback flex flex-row text-left justify-center bg-black">
     <div class="bg-lime-300 p-20 flex flex-col items-center">
       <h2 class="mb-28 text-2xl font-bold text-wrap max-w-96">Feel free to drop us your feedback</h2>
       <div class="bg-lime-200 rounded-full max-w-72 h-auto">
@@ -83,6 +83,12 @@ input, textarea {
 
 .form {
   max-width: 30em;
+}
+
+@media screen and (max-width: 600px){
+  .feedback {
+    flex-wrap: wrap;
+  }
 }
 
 </style>
