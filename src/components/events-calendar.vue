@@ -55,16 +55,21 @@
                 <div v-if="index < activeEvent.events.length - 1" class="line mx-3 absolute bg-orange-500"></div>
               </div>
               <div class="w-full sm:flex-1 px-2 md:px-4 mb-2 md:mb-4">
-                <div class="event-title rounded shadow-md">
+                <div class="event-title rounded shadow-md "  @click="showImage = showImage === index ? null : index">
                   <div class="p-2 md:p-4 text-white flex items-center">
-                    <div class="flex-1">{{ event.title }}</div>
+                    <div class="title flex-1">{{ event.title }}</div>
                     <img src="../assets/game-icon.png" alt="Game Icon" class="ml-2">
                   </div>
-                  <div>
-                    <div class="p-2 md:p-4">
-                      {{ event.description }}
-                    </div>
+                  <div class="font-nunito p-2 md:p-4">
+                    {{ event.description }}
                   </div>
+                  <div v-if="showImage === index" class="relative w-full h-full bg-white opacity-95 flex justify-center items-center">
+                    <img v-if="event.title === 'Aapi fest'" src="../assets/api-celebration.webp" alt="Small Image" class="md:w-1/2 sm:w-1/2 mt-5 mb-5">
+                    <img v-if="event.title === 'Game Launch'" src="../assets/game-launch.png" alt="Small Image" class="md:w-1/2 sm:w-1/2 mt-5 mb-5">
+                    <img v-if="event.title === 'Monopoly Night'" src="../assets/monopoly.webp" alt="Small Image" class="md:w-1/2 sm:w-1/2 mt-5 mb-5">
+                  </div>
+
+
                 </div>
               </div>
             </div>
@@ -95,6 +100,7 @@ export default {
     const calendarDays = ref([]);
     const dateInput = ref('');
     const activeEvent = ref(null);
+    const showImage = ref(null);
 
     let today = new Date();
     let month = ref(today.getMonth());
@@ -106,10 +112,18 @@ export default {
         month: 7,
         year: 2024,
         events: [
-          { title: 'Game Launch', startTime: '11:35', endTime: '13:05', urlImage: 'image', description:'Dive into our \'Game Lunch\' and conquer virtual worlds while devouring your meal! Who says you can\'t be a gaming master and a gourmet at the same time?' },
-          { title: 'Monopoly Night', startTime: '19:05', endTime: '21:05', urlImage: 'image', description:'Join the \'Night Monopoly\' and unleash your tycoon side while savoring our delights! Because the best deals are made with a good dish on the table and a monopoly on the board.'}
+          { title: 'Game Launch', startTime: '11:35', endTime: '13:05', urlImage: '../assets/game-launch.png', description:'Dive into our \'Game Lunch\' and conquer virtual worlds while devouring your meal! Who says you can\'t be a gaming master and a gourmet at the same time?' },
+          { title: 'Monopoly Night', startTime: '19:05', endTime: '21:05', urlImage: '../assets/monopoly.webp', description:'Join the \'Night Monopoly\' and unleash your tycoon side while savoring our delights! Because the best deals are made with a good dish on the table and a monopoly on the board.'}
         ]
-      }
+      },
+      {
+        day: 17,
+        month: 7,
+        year: 2024,
+        events: [
+          { title: 'Aapi fest', startTime: '11:35', endTime: '13:05', urlImage: "../assets/api-celebration.webp", description:'We’re hosting a night of \'festivities with game time\' good music, aapi community building, & you’ll leave with a FREE goodie bag of aapi-owend goodies.\'t 💌 (omsom, drink lunar, kooky’s kookies, jin da ma’ss dumplings, & sip’s straw set 👀)' },
+        ]
+      },
     ];
 
     function initCalendar() {
@@ -212,7 +226,8 @@ export default {
       activeEvent,
       prevMonth,
       nextMonth,
-      setActiveDay
+      setActiveDay,
+      showImage
     };
   }
 };
@@ -427,11 +442,17 @@ calendar .days .prev-date,
 }
 
 .event-title {
-  font-size: 1rem;
   font-weight: 400;
   background-color: #FFB571;
   color: white;
+  font-size: 1rem;
 }
+
+.event-title .title {
+  font-size: 20px;
+  font-family: "Press Start 2P", sans-serif;
+}
+
 .events .event .event-title:hover {
   background-color: #FF983A;
 }
