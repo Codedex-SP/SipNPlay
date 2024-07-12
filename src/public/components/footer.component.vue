@@ -8,7 +8,7 @@
       <div class="box">
         <figure class="flex">
           <a href="#">
-            <img src="/src/assets/images/sipnplay.png" alt="Sip & Play logo" class="bg-white rounded-full w-12">
+            <img src="/src/assets/sipnplay.png" alt="Sip & Play logo" class="bg-white rounded-full w-12">
           </a>
         </figure>
         <p class="text-white text-base my-3">Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.</p>

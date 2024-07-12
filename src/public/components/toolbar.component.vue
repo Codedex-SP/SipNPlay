@@ -10,7 +10,7 @@
         </button>
         <div class="flex-1 text-center">
           <div>
-            <img src="/src/assets/images/sipnplay.png" alt="Sip & Play Logo" class="h-14 mx-auto bg-white rounded-full sm:w-auto">
+            <img src="/src/assets/sipnplay.png" alt="Sip & Play Logo" class="h-14 mx-auto bg-white rounded-full sm:w-auto">
           </div>
         </div>
         <button class="text-white text-3xl bg-inherit rounded-full hover:border-transparent focus:outline-none" >
