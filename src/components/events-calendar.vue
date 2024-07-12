@@ -35,38 +35,36 @@
         <div class="event-date text-sm">{{ activeEvent.date }}</div>
       </div>
 
+
       <div class="events">
         <div v-if="activeEvent">
-          <div v-for="(event, index) in activeEvent.events" :key="event.title" class="event items-start mb-2 p-2 relative sm:flex">
-            <div class="w-full md:w-1/4 sm:w-1/6 px-2 md:px-4 mb-2 md:mb-4">
-              <div class="text-black text-lg">
-                {{ event.startTime }}
-              </div>
-              <div class="text-gray-500 text-sm">
-                {{ event.endTime }}
-              </div>
-            </div>
-            <div class="w-full md:w-1/4 sm:w-1/6 px-2 md:px-4 mb-2 md:mb-4">
-              <div class="relative w-1/2 mx-1">
-                <img src="../assets/event-icon.png" alt="Event Image" class="md:w-1/2 sm:w-1/2">
-              </div>
-              <div v-if="index < activeEvent.events.length - 1" class="line mx-5 absolute bg-orange-500"></div>
-            </div>
-            <div class="w-full md:w-1/2 sm:w-full px-2 md:px-4 mb-2 md:mb-4">
-              <div class="event-title rounded shadow-md">
-                <div class="p-2 md:p-4 text-white flex items-center">
-                  <div class="flex-1">{{ event.title }}</div>
-                  <img src="../assets/game-icon.png" alt="Game Icon" class="ml-2">
+          <div v-for="(event, index) in activeEvent.events" :key="event.title" class="event items-start mb-2 p-2 relative">
+            <div class="w-full sm:flex">
+              <div class="w-full sm:w-1/4 px-2 md:px-4 mb-2 md:mb-4">
+                <div class="text-black text-lg">
+                  {{ event.startTime }}
                 </div>
-                <div class="hidden sm:block">
-                  <div class="p-2 md:p-4">
-                    {{ event.description }}
+                <div class="text-gray-500 text-sm">
+                  {{ event.endTime }}
+                </div>
+              </div>
+              <div class="hidden sm:block sm:w-1/6 px-2 md:px-4 mb-2 md:mb-4">
+                <div class="relative w-1/2 mx-1">
+                  <img src="../assets/event-icon.png" alt="Event Image" class="md:w-1/2 sm:w-1/2">
+                </div>
+                <div v-if="index < activeEvent.events.length - 1" class="line mx-3 absolute bg-orange-500"></div>
+              </div>
+              <div class="w-full sm:flex-1 px-2 md:px-4 mb-2 md:mb-4">
+                <div class="event-title rounded shadow-md">
+                  <div class="p-2 md:p-4 text-white flex items-center">
+                    <div class="flex-1">{{ event.title }}</div>
+                    <img src="../assets/game-icon.png" alt="Game Icon" class="ml-2">
                   </div>
-                </div>
-              </div>
-              <div class="sm:hidden">
-                <div class="p-2 md:p-4">
-                  {{ event.description }}
+                  <div>
+                    <div class="p-2 md:p-4">
+                      {{ event.description }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -76,7 +74,6 @@
           <h3>No Events</h3>
         </div>
       </div>
-
 
 
     </div>
@@ -110,7 +107,7 @@ export default {
         year: 2024,
         events: [
           { title: 'Game Launch', startTime: '11:35', endTime: '13:05', urlImage: 'image', description:'Dive into our \'Game Lunch\' and conquer virtual worlds while devouring your meal! Who says you can\'t be a gaming master and a gourmet at the same time?' },
-          { title: 'Monopoly Night', startTime: '17:05', endTime: '17:05', urlImage: 'image', description:'Join the \'Night Monopoly\' and unleash your tycoon side while savoring our delights! Because the best deals are made with a good dish on the table and a monopoly on the board.'}
+          { title: 'Monopoly Night', startTime: '19:05', endTime: '21:05', urlImage: 'image', description:'Join the \'Night Monopoly\' and unleash your tycoon side while savoring our delights! Because the best deals are made with a good dish on the table and a monopoly on the board.'}
         ]
       }
     ];
@@ -248,10 +245,10 @@ body {
   position: inherit;
   width: 800px;
   min-height: 850px;
-  margin: 0 auto;
   padding: 5px;
   color: #fff;
   display: flex;
+  margin: 100px auto;
   border-radius: 10px;
 }
 
