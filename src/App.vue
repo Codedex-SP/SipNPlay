@@ -1,24 +1,16 @@
 <script setup>
-
+import Toolbar from "./public/components/toolbar.component.vue";
+import Footer from "./public/components/footer.component.vue";
+import MainPage from "./pages/main-page.vue";
 </script>
 
 <template>
+  <toolbar/>
 
-<!-- <toolbar -->
-<!-- #header -->
+  <main-page/>
+  <Footer/>
 
-<!-- categories -->
-<!-- all items -->
-<!-- item selected -->
-
-<!-- events(calendar) -->
-<!-- list of events -->
-
-<!-- feedback -->
-<!-- footer -->
-  
 </template>
 
-<style scoped>
-
+<style>
 </style>

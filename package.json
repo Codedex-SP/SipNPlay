@@ -9,7 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/nunito": "^5.0.18",
+    "@fontsource/press-start-2p": "^5.0.20",
+    "@popperjs/core": "^2.11.8",
     "@tresjs/core": "^4.1.0",
+    "v-calendar": "^3.1.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@tresjs/core": "^4.1.0",
+    "axios": "^1.7.2",
+    "three": "^0.166.1",
     "vue": "^3.4.29"
   },
   "devDependencies": {
