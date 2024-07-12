@@ -25,8 +25,8 @@ function init() {
   controls.maxDistance = 1000;
 
   // Light
-  const light = new THREE.HemisphereLight(0xffffff, 0x444444);
-  light.position.set(0, 20, 0);
+  const light = new THREE.HemisphereLight(0xffffff, 0x444444, 3);
+  light.position.set(0, 10, 0);
   scene.add(light);
 
   loadModel();
@@ -47,7 +47,7 @@ function loadModel() {
   }
 
   const loader = new GLTFLoader();
-  loader.load('src/assets/models/cup_of_cappuccino.glb', function (gltf) {
+  loader.load('src/assets/cup_of_cappuccino.glb', function (gltf) {
     gltf.scene.scale.set(7, 7, 7);
     gltf.scene.position.set(0, -0.2, 0);
     scene.add(gltf.scene);
