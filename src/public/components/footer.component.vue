@@ -14,12 +14,12 @@
         <p class="text-white text-base my-3">At Sip & Play, we believe in the magic of bringing people together through exceptional games and drinks. Come and create unforgettable memories with us!</p>
         <ul class="flex flex-row">
           <li>
-            <a href="https://www.instagram.com/sipnplaynyc/?hl=en" target="_blank" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center">
+            <a href="https://www.instagram.com/sipnplaynyc/?hl=en" target="_blank" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center animate">
               <img src="/src/assets/images/instagram.svg" alt="Instagram icon" class="border-white">
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/sipnplaynyc/" target="_blank" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center">
+            <a href="https://www.facebook.com/sipnplaynyc/" target="_blank" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center animate">
               <img src="/src/assets/images/facebook.svg" alt="Facebook icon" class="border-white h-8">
             </a>
           </li>
@@ -63,6 +63,14 @@
 
 :global(body) {
   display: block;
+}
+
+.animate {
+  transition: transform 0.3s ease-in-out;
+}
+
+.animate:hover {
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 800px){
