@@ -10,8 +10,7 @@
               'bg-white border-black': selectedCategory === category,
               'bg-[#ffb571] border-[#ffb571]': selectedCategory !== category
             }">
-            <input type="radio" name="category" :value="category" v-model="selectedCategory" class="hidden"
-              @change="setFeaturedItem" />
+            <input type="radio" name="category" :value="category" v-model="selectedCategory" class="hidden" />
             <div class="h-16 md:h-20 flex justify-center items-center w-16 md:w-20 rounded-full bg-white shadow-md">
               <img :src="getCategoryIcon(category)" alt="Category icon" class="w-8 h-8 md:w-10 md:h-10" />
             </div>
@@ -53,54 +52,44 @@
           </button>
         </div>
       </div>
+      <div v-if="featuredItem"
+        class="py-8 rounded-xl overflow-hidden relative transition-shadow duration-300 hover:shadow-2xl">
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 relative">
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-bl from-white/10 to-white/30 blur"></div>
 
-      <div v-if="featuredItem" class="py-8 rounded-xl overflow-hidden relative">
-        <div class="bg-gradient-to-br from-amber-100 to-orange-100 p-8 shadow-2xl">
-
-          <h2 class="text-3xl md:text-4xl retro-font font-serif font-semibold text-center mb-4 text-orange-700">
+          <h2
+            class="text-3xl md:text-4xl retro-font font-serif font-semibold text-center mb-4 text-orange-800 relative z-10">
             {{ featuredItem.name }}
           </h2>
 
-          <div class="flex flex-col md:flex-row md:space-x-8 items-center justify-center">
+          <div class="flex flex-col md:flex-row md:space-x-8 items-center justify-center relative z-10">
 
             <div class="md:w-1/2 mb-4 md:mb-0">
-              <div class="relative overflow-hidden rounded-lg">
-                  <div ref="container" class="rounded-full"></div>
+              <div
+                class="relative overflow-hidden rounded-lg transition-transform duration-300 transform hover:scale-105"
+                @mouseover="isHovered = true" @mouseleave="isHovered = false">
+                <div ref="container" class="rounded-full"></div>
+                <div v-if="isHovered" class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <button class="text-white text-lg retro-font">View Details</button>
+                </div>
               </div>
             </div>
 
             <div class="md:w-1/2 text-center md:text-left">
-              <div class="text-2xl retro-font font-semibold text-amber-700 mb-2">
+              <div class="text-2xl retro-font font-semibold text-amber-800 mb-2 relative z-10">
                 ${{ formatPrice(featuredItem.price) }}
               </div>
-
-              <div class="text-gray-700">
+              <div class="text-gray-800 line-clamp-3" style="max-height: 6rem;">
                 <p class="description-line" v-for="(line, index) in featuredItem.description.split('\n')" :key="index">
-                  {{ line
-                  }}</p>
+                  {{ line }}
+                </p>
               </div>
-
-              <button @click="showIngredients = !showIngredients"
-                class="mt-4 bg-amber-300 hover:bg-amber-400 text-orange-700 font-semibold py-2 px-4 rounded transition duration-300">
-                {{ showIngredients ? 'Hide Ingredients' : 'See Ingredients' }}
+              <button v-if="featuredItem.description.split('\n').length > 3"
+                class="text-orange-600 mt-2 hover:underline" @click="showFullDescription = !showFullDescription">
+                {{ showFullDescription ? 'Read Less' : 'Read More' }}
               </button>
-
-              <transition name="fade">
-                <div v-if="showIngredients" class="mt-4">
-                  <h3 class="text-xl font-semibold text-amber-700 mb-2">Ingredients</h3>
-                  <div class="flex flex-wrap justify-center md:justify-start -mx-2">
-                    <div v-for="ingredient in featuredItem.ingredients" :key="ingredient" class="px-2 mb-2">
-                      <div class="bg-white rounded-full shadow-md p-2 flex items-center">
-                        <img :src="getIngredientIcon(ingredient)" alt="Ingredient" class="w-8 h-8 mr-2">
-                        <span class="text-sm">{{ ingredient }}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </transition>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -211,18 +200,6 @@ export default {
       this.$nextTick(() => {
         this.load3DModel();
       });
-    },
-    setFeaturedItem() {
-      const foodsInCategory = this.menu[this.selectedCategory];
-
-      if (foodsInCategory && foodsInCategory.length > 0) {
-        this.featuredItem = foodsInCategory[0]; // Selecciona el primer ítem de la categoría actual
-        this.$nextTick(() => {
-          this.load3DModel();
-        });
-      } else {
-        this.featuredItem = null;
-      }
     },
 
     getCategoryIcon(category) {
