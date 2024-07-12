@@ -8,8 +8,12 @@ import Feedback from "../components/feedback.component.vue";
 <template>
   <Header/>
   <div id="app" class="">
-    <Menu/>
-    <EventsCalendar/>
+    <div id="menu">
+      <Menu/>
+    </div>
+    <div id="events-calendar">
+      <EventsCalendar/>
+    </div>
     <Feedback/>
   </div>
 </template>

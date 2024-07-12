@@ -1,5 +1,5 @@
 <script setup>
-
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -7,9 +7,7 @@
     <div class="group-1 w-full max-w-7xl m-auto grid grid-cols-3 gap-14 px-0 pt-11 md:grid-rows-1 md:gap-7 md:pt-9 md:w-11/12">
       <div class="box">
         <figure class="flex">
-          <a href="#">
             <img src="/src/assets/sipnplay.png" alt="Sip & Play logo" class="bg-white rounded-full w-12">
-          </a>
         </figure>
         <p class="text-white text-base my-3">At Sip & Play, we believe in the magic of bringing people together through exceptional games and drinks. Come and create unforgettable memories with us!</p>
         <ul class="flex flex-row">
@@ -28,8 +26,8 @@
       <div class="box">
         <h2 class="text-white mb-6 text-xl">Quick Links</h2>
         <ul>
-          <li><a href="#" class="inline-block no-underline h-11 leading-10 text-white text-center font-normal transition duration-300 ease hover:text-green-300">Menu</a></li>
-          <li><a href="#" class="inline-block no-underline h-11 leading-10 text-white text-center font-normal transition duration-300 ease hover:text-green-300">Event's Calendar</a></li>
+          <li><router-link :to="{ name: 'home', hash: '#menu' }" class="inline-block no-underline h-11 leading-10 text-white text-center font-normal transition duration-300 ease hover:text-green-300">Menu</router-link></li>
+          <li><router-link :to="{ name: 'home', hash: '#events-calendar' }" class="inline-block no-underline h-11 leading-10 text-white text-center font-normal transition duration-300 ease hover:text-green-300">Event's Calendar</router-link></li>
         </ul>
       </div>
       <div class="box">
