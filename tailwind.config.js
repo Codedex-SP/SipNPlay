@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'nunito' : ['Nunito', 'sans-serif'],
+        'press-start' : ['Press Start 2P', 'cursive']
+      }
+    },
   },
   plugins: [],
 }

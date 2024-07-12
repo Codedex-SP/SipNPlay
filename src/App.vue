@@ -1,24 +1,12 @@
 <script setup>
-
+import Menu from './components/Menu.vue';
 </script>
 
 <template>
-
-<!-- <toolbar -->
-<!-- #header -->
-
-<!-- categories -->
-<!-- all items -->
-<!-- item selected -->
-
-<!-- events(calendar) -->
-<!-- list of events -->
-
-<!-- feedback -->
-<!-- footer -->
-  
+    <div id="app" class="">
+    <Menu/>
+    </div>
 </template>
 
 <style scoped>
-
 </style>
