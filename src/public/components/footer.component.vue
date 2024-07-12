@@ -11,15 +11,15 @@
             <img src="/src/assets/sipnplay.png" alt="Sip & Play logo" class="bg-white rounded-full w-12">
           </a>
         </figure>
-        <p class="text-white text-base my-3">Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.</p>
+        <p class="text-white text-base my-3">At Sip & Play, we believe in the magic of bringing people together through exceptional games and drinks. Come and create unforgettable memories with us!</p>
         <ul class="flex flex-row">
           <li>
-            <a href="#" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center">
+            <a href="https://www.instagram.com/sipnplaynyc/?hl=en" target="_blank" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center">
               <img src="/src/assets/images/instagram.svg" alt="Instagram icon" class="border-white">
             </a>
           </li>
           <li>
-            <a href="#" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center">
+            <a href="https://www.facebook.com/sipnplaynyc/" target="_blank" class="w-11 h-11 mr-2.5 bg-amber-900 rounded-full flex items-center justify-center">
               <img src="/src/assets/images/facebook.svg" alt="Facebook icon" class="border-white h-8">
             </a>
           </li>
