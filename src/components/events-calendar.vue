@@ -37,22 +37,48 @@
 
       <div class="events">
         <div v-if="activeEvent">
-          <div
-              v-for="event in activeEvent.events"
-              :key="event.title"
-              class="event flex justify-between items-center mb-2 p-2 bg-gray-100 rounded-lg shadow"
-          >
-            <div class="title flex items-center">
-              <i class="fas fa-circle text-primary-clr mr-2"></i>
-              <h3 class="event-title text-lg font-semibold">{{ event.title }}</h3>
+          <div v-for="(event, index) in activeEvent.events" :key="event.title" class="event items-start mb-2 p-2 relative sm:flex">
+            <div class="w-full md:w-1/4 sm:w-1/6 px-2 md:px-4 mb-2 md:mb-4">
+              <div class="text-black text-lg">
+                {{ event.startTime }}
+              </div>
+              <div class="text-gray-500 text-sm">
+                {{ event.endTime }}
+              </div>
             </div>
-            <div class="event-time text-gray-500">{{ event.time }}</div>
+            <div class="w-full md:w-1/4 sm:w-1/6 px-2 md:px-4 mb-2 md:mb-4">
+              <div class="relative w-1/2 mx-1">
+                <img src="../assets/event-icon.png" alt="Event Image" class="md:w-1/2 sm:w-1/2">
+              </div>
+              <div v-if="index < activeEvent.events.length - 1" class="line mx-5 absolute bg-orange-500"></div>
+            </div>
+            <div class="w-full md:w-1/2 sm:w-full px-2 md:px-4 mb-2 md:mb-4">
+              <div class="event-title rounded shadow-md">
+                <div class="p-2 md:p-4 text-white flex items-center">
+                  <div class="flex-1">{{ event.title }}</div>
+                  <img src="../assets/game-icon.png" alt="Game Icon" class="ml-2">
+                </div>
+                <div class="hidden sm:block">
+                  <div class="p-2 md:p-4">
+                    {{ event.description }}
+                  </div>
+                </div>
+              </div>
+              <div class="sm:hidden">
+                <div class="p-2 md:p-4">
+                  {{ event.description }}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div v-else class="no-event text-center text-gray-500">
           <h3>No Events</h3>
         </div>
       </div>
+
+
+
     </div>
   </div>
 </template>
@@ -83,8 +109,8 @@ export default {
         month: 7,
         year: 2024,
         events: [
-          { title: 'Event 1', time: '10:00 AM' },
-          { title: 'Event 2', time: '11:00 AM' }
+          { title: 'Game Launch', startTime: '11:35', endTime: '13:05', urlImage: 'image', description:'Dive into our \'Game Lunch\' and conquer virtual worlds while devouring your meal! Who says you can\'t be a gaming master and a gourmet at the same time?' },
+          { title: 'Monopoly Night', startTime: '17:05', endTime: '17:05', urlImage: 'image', description:'Join the \'Night Monopoly\' and unleash your tycoon side while savoring our delights! Because the best deals are made with a good dish on the table and a monopoly on the board.'}
         ]
       }
     ];
@@ -220,14 +246,13 @@ body {
 
 .container {
   position: inherit;
-  width: 1200px;
+  width: 800px;
   min-height: 850px;
   margin: 0 auto;
   padding: 5px;
   color: #fff;
   display: flex;
   border-radius: 10px;
-  background-color: #373c4f;
 }
 
 .calendar {
@@ -371,7 +396,6 @@ calendar .days .prev-date,
   border: 5px solid #FFAD62;
   background: linear-gradient(to right, rgb(255, 237, 169) 1%, #FFFFFF 100%);
   margin-bottom: 30px;
-  padding: 20px;
 }
 
 .events-box .today-date {
@@ -394,77 +418,25 @@ calendar .days .prev-date,
 .events {
   width: 100%;
   height: 100%;
-  max-height: 600px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  padding-left: 4px;
 }
 
 .events .event {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background: linear-gradient(90deg, var(--primary-clr), transparent);
   cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   margin-bottom: 15px;
+  font-family: 'Nunito', sans-serif;
 }
 
-.events .event:nth-child(even) {
-  background: transparent;
-}
-.events .event:hover {
-  background: linear-gradient(90deg, var(--primary-clr), transparent);
-}
-.events .event .title {
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-}
-.events .event .title .event-title {
+.event-title {
   font-size: 1rem;
   font-weight: 400;
-  margin-left: 20px;
+  background-color: #FFB571;
+  color: white;
 }
-.events .event i {
-  color: var(--primary-clr);
-  font-size: 0.5rem;
-}
-.events .event:hover i {
-  color: #fff;
-}
-.events .event .event-time {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #878895;
-  margin-left: 15px;
-  pointer-events: none;
-}
-
-.events .event .event-time {
-  color: #FFFFFF;
-}
-
-.events .event::after {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  font-size: 3rem;
-  line-height: 1;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.3;
-  color: var(--primary-clr);
-  transform: translateY(-50%);
-}
-.events .event:hover::after {
-  display: flex;
+.events .event .event-title:hover {
+  background-color: #FF983A;
 }
 
 .events .no-event {
@@ -476,6 +448,12 @@ calendar .days .prev-date,
   font-size: 1.5rem;
   font-weight: 500;
   color: #878895;
+}
+
+.line {
+  width: 4px;
+  height: 100%;
+  background-color: #FFB571;
 }
 
 /* media queries */
@@ -515,10 +493,8 @@ calendar .days .prev-date,
     font-size: 16px;
   }
 
-  .event-time {
-    font-size: 14px;
-  }
 }
+
 
 /* Media query para dispositivos pequeños (smartphones) */
 @media (max-width: 480px) {
@@ -553,10 +529,6 @@ calendar .days .prev-date,
 
   .event-title {
     font-size: 14px;
-  }
-
-  .event-time {
-    font-size: 12px;
   }
 }
 </style>
