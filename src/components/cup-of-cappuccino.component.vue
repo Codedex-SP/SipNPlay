@@ -15,7 +15,7 @@ onMounted(() => {
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth/2, window.innerHeight/2);
-    renderer.setClearColor('#FFB571');
+    renderer.setClearColor('#FDBA74');
     container.value.appendChild(renderer.domElement);
 
     // OrbitControls

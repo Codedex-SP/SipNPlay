@@ -26,6 +26,9 @@ import Cappuccino from './cup-of-cappuccino.component.vue';
 </template>
 
 <style scoped>
+:global(:root) {
+  background-color: #FDBA74 !important;
+}
 h1 {
   font-family: 'Press Start 2P', system-ui;
   color: black;
