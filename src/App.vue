@@ -1,24 +1,10 @@
 <script setup>
-
+import EventsCalendar from './components/events-calendar.vue';
 </script>
 
 <template>
-
-<!-- <toolbar -->
-<!-- #header -->
-
-<!-- categories -->
-<!-- all items -->
-<!-- item selected -->
-
-<!-- events(calendar) -->
-<!-- list of events -->
-
-<!-- feedback -->
-<!-- footer -->
-  
+  <EventsCalendar/>
 </template>
 
-<style scoped>
-
+<style>
 </style>
