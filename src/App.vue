@@ -1,11 +1,14 @@
 <script setup>
 
+import Toolbar from "./public/components/toolbar.component.vue";
+import Header from "./sipnplay/components/header.component.vue";
+import Footer from "./public/components/footer.component.vue";
 </script>
 
 <template>
+  <toolbar/>
 
-<!-- <toolbar -->
-<!-- #sip&play -->
+  <Header/>
 
 <!-- categories -->
 <!-- all items -->
@@ -15,7 +18,7 @@
 <!-- list of events -->
 
 <!-- feedback -->
-<!-- footer -->
+<Footer/>
   
 </template>
 
