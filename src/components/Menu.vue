@@ -100,6 +100,242 @@
 </template>
 
 <script>
+
+const menuData = {
+  "menu": {
+    "coffee": [
+      {
+        "id": 1,
+        "name": "Latte",
+        "price": {
+          "hot": 4.75,
+          "cold": 5.25
+        },
+        "description": "Espresso with steamed milk.",
+        "image": "/src/assets/img/foods/latte.png"
+      },
+      {
+        "id": 2,
+        "name": "Cappuccino",
+        "price": {
+          "hot": 4.50
+        },
+        "description": "Espresso with steamed milk and a layer of foam.",
+        "image": "/src/assets/img/foods/cappuccino.png"
+      },
+      {
+        "id": 3,
+        "name": "Americano",
+        "price": {
+          "hot": 3.75,
+          "cold": 4.25
+        },
+        "description": "Espresso diluted with hot water.",
+        "image": "/src/assets/img/foods/americano.png"
+      }
+    ],
+    "specialty_drinks": [
+      {
+        "id": 9,
+        "name": "Rose Latte",
+        "price": {
+          "hot": 5.75,
+          "cold": 6.25
+        },
+        "description": "Latte with a subtle rose flavor.",
+        "image": "/src/assets/img/foods/rosse_latte.png"
+      },
+      {
+        "id": 10,
+        "name": "Chai",
+        "price": {
+          "hot": 5.00,
+          "cold": 5.50
+        },
+        "description": "A spiced tea latte made with a blend of spices.",
+        "image": "/src/assets/img/foods/chai.png"
+      },
+      {
+        "id": 11,
+        "name": "Matcha Latte",
+        "price": {
+          "hot": 5.25,
+          "cold": 5.75
+        },
+        "description": "Green tea latte made with matcha powder.",
+        "image": "/src/assets/img/foods/matcha_latte.png"
+      }
+    ],
+    "boba": [
+      {
+        "id": 18,
+        "name": "Black Milk Tea",
+        "price": {
+          "Medium": 4.25,
+          "Large": 5.25,
+          "Hot": 5.25
+        },
+        "description": "Classic milk tea made with black tea.",
+        "image": "/src/assets/img/foods/black_milk_tea.png"
+      },
+      {
+        "id": 19,
+        "name": "Taro Milk Tea",
+        "price": {
+          "Medium": 4.75,
+          "Large": 5.75,
+          "Hot": 5.75
+        },
+        "description": "Caffeine free, made with taro flavor.",
+        "image": "/src/assets/img/foods/taro_milk_tea.png"
+      },
+      {
+        "id": 20,
+        "name": "Thai Milk Tea",
+        "price": {
+          "Medium": 4.25,
+          "Large": 5.25,
+          "Hot": 5.25
+        },
+        "description": "Caffeine free, made with Thai tea flavor.",
+        "image": "/src/assets/img/foods/thai_milk_tea.png"
+      }
+    ],
+    "sandwiches_salads": [
+      {
+        "id": 36,
+        "name": "Pizza Panini",
+        "price": 11,
+        "description": "Delicious pepperoni and fresh mozzarella pressed to perfection! Served with chips.",
+        "ingredients": [
+          "pepperoni",
+          "fresh mozzarella",
+          "marinara",
+          "olive oil",
+          "Italian herb focaccia",
+          "chips"
+        ],
+        "image": "/src/assets/img/foods/pizza_panini.png"
+      },
+      {
+        "id": 37,
+        "name": "Mixed Green Salad",
+        "price": 6.50,
+        "description": "A refreshing mix of greens. Customize with smoked salmon (+$5.00), boiled egg (+$1.00), or avocado (+$1.50).",
+        "ingredients": [
+          "mixed greens",
+          "tomato",
+          "vegan"
+        ],
+        "image": "/src/assets/img/foods/mixed_green_salad.png"
+      },
+      {
+        "id": 38,
+        "name": "Avocado Toast",
+        "price": 10.00,
+        "description": "Creamy avocado mashed. Add an egg (+$1.00) for extra flavor.",
+        "ingredients": [
+          "avocado",
+          "salt",
+          "pepper",
+          "lemon juice",
+          "olive oil",
+          "toasted heritage wheat",
+          "side salad"
+        ],
+        "image": "/src/assets/img/foods/avocado_toast.png"
+      }
+    ],
+    "hot_bites": [
+      {
+        "id": 25,
+        "name": "Chicken Poppers",
+        "price": 6,
+        "description": "Crispy chicken bites.",
+        "image": "/src/assets/img/foods/chicken_poppers.png"
+      },
+      {
+        "id": 26,
+        "name": "Fries",
+        "price": 5,
+        "description": "Crispy seasoned fries.",
+        "image": "/src/assets/img/foods/fries.png"
+      },
+      {
+        "id": 27,
+        "name": "Pigs in a Blanket",
+        "price": 7,
+        "description": "Mini hot dogs wrapped in dough.",
+        "image": "/src/assets/img/foods/pigs_in_a_blanket.png"
+      }
+    ],
+    "seasonal_menu": [
+      {
+        "id": 45,
+        "name": "Pina Colada",
+        "price": {
+          "Medium": 4.75,
+          "Large": 5.75
+        },
+        "description": "Our coconut boba with pineapple flavor.",
+        "image": "/src/assets/img/foods/pina_colada.png"
+      },
+      {
+        "id": 46,
+        "name": "Matcha Lemonade",
+        "price": {
+          "Medium": 5,
+          "Large": 6
+        },
+        "description": "Our freshly squeezed lemonade with a balance of an earthy shot of matcha.",
+        "image": "/src/assets/img/foods/matcha_lemonade.png"
+      },
+      {
+        "id": 47,
+        "name": "Citrus Boba",
+        "price": {
+          "Medium": 5,
+          "Large": 6
+        },
+        "description": "Made with real fruit juice and fruit slices!",
+        "image": "/src/assets/img/foods/citrus_boba.png"
+      }
+    ],
+    "beer_wine": [
+      {
+        "id": 52,
+        "name": "Babe Rose",
+        "price": 18.99,
+        "description": "Light and refreshing rosé wine.",
+        "image": "/src/assets/img/foods/babe_rose.png"
+      },
+      {
+        "id": 53,
+        "name": "Archer Roose White",
+        "price": 22.50,
+        "description": "Crisp and refreshing white wine.",
+        "image": "/src/assets/img/foods/archer_roose_white.png"
+      },
+      {
+        "id": 54,
+        "name": "Allagash White",
+        "price": 25.75,
+        "description": "Rich and bold white beer.",
+        "image": "/src/assets/img/foods/allagash_white.png"
+      }
+    ]
+  }
+};
+
+
+const menuArray = Object.entries(menuData.menu).map(([category, items]) => ({
+  category,
+  items
+}));
+
+console.log(menuArray);
+
+
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -144,20 +380,15 @@ export default {
     },
   },
   methods: {
-    async loadMenuData() {
-      try {
-        const response = await axios.get('http://localhost:3000/menu');
-        console.log('Menu data:', response.data);
-        if (response.data) {
-          this.categories = Object.keys(response.data);
-          this.menu = response.data;
+    loadMenuData() {
+     
+        const response = menuData;
+        console.log('Menu data:', response.menu);
+       
+          this.categories = Object.keys(response.menu);
+          this.menu = response.menu;
           this.setFeaturedItem();
-        } else {
-          console.error('Menu data is not valid.');
-        }
-      } catch (error) {
-        console.error('Error loading menu data:', error);
-      }
+       
     },
     getPrice(item) {
       if (item.price) {
