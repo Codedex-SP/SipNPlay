@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainPage from "../pages/main-page.vue";
+import MainPage from "../page/main-page.vue";
 
 const routes = [
     { path: '/', redirect: '/home' },

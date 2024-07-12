@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Cappuccino from './cup-of-cappuccino.component.vue';
+import {RouterLink} from "vue-router";
 </script>
 
 <template>
@@ -12,8 +13,12 @@ import Cappuccino from './cup-of-cappuccino.component.vue';
       </div>
       <p class="text-wrap max-w-64 text-left my-5">Discover a new place where you can have a good time while enjoying a delicious meal</p>
       <div class="flex flex-row gap-2.5 drop-shadow-md text-lime-300 mt-3">
-        <button class="rounded-full border-lime-300 border-2 px-4 py-1 hover:border-transparent focus:outline-none bg-white">Menu</button>
-        <button class="rounded-full border-lime-300 border-2 px-4 py-1 hover:border-transparent focus:outline-none bg-white">Event's Calendar</button>
+        <router-link :to="{ name: 'home', hash: '#menu' }">
+          <button class="rounded-full border-lime-300 border-2 px-4 py-1 hover:border-transparent focus:outline-none bg-white">Menu</button>
+        </router-link>
+        <router-link :to="{ name: 'home', hash: '#events-calendar' }">
+          <button class="rounded-full border-lime-300 border-2 px-4 py-1 hover:border-transparent focus:outline-none bg-white">Event's Calendar</button>
+        </router-link>
       </div>
     </div>
     <div>
