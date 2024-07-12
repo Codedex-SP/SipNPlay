@@ -17,29 +17,31 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-row text-left">
-    <div class="bg-lime-300 p-20">
+  <div class="flex flex-row text-left justify-center bg-black">
+    <div class="bg-lime-300 p-20 flex flex-col items-center">
       <h2 class="mb-28 text-2xl font-bold text-wrap max-w-96">Feel free to drop us your feedback</h2>
-      <div class="bg-lime-200 rounded-full">
+      <div class="bg-lime-200 rounded-full max-w-72 h-auto">
         <img src="/src/assets/images/storefront_illustration.svg" alt="Café image">
       </div>
     </div>
-    <div class="bg-lime-100 p-20">
-      <h3 class="text-center mb-10 font-bold">Submit general questions, suggestions, and boardgame recommendations below!</h3>
-      <div class="flex flex-col gap-4">
-        <div class="input-container">
-          <input type="text" id="name" name="name" class="input" required>
-          <label for="name" class="input-placeholder">Name</label>
+    <div class="bg-lime-100 p-20 flex flex-col items-center">
+      <div class="form">
+        <h3 class="text-center mb-10 font-bold">Submit general questions, suggestions, and boardgame recommendations below!</h3>
+        <div class="flex flex-col gap-4">
+          <div class="input-container">
+            <input type="text" id="name" name="name" class="input" required>
+            <label for="name" class="input-placeholder">Name</label>
+          </div>
+          <div class="input-container">
+            <input type="email" id="email" name="email" class="input" required>
+            <label for="email" class="input-placeholder">Email</label>
+          </div>
+          <div class="input-container">
+            <textarea id="feedback" name="feedback" class="input" required></textarea>
+            <label for="feedback" class="input-placeholder">Feedback</label>
+          </div>
+          <button type="submit" class="text-white bg-lime-300">Send</button>
         </div>
-        <div class="input-container">
-          <input type="email" id="email" name="email" class="input" required>
-          <label for="email" class="input-placeholder">Email</label>
-        </div>
-        <div class="input-container">
-          <textarea id="feedback" name="feedback" class="input" required></textarea>
-          <label for="feedback" class="input-placeholder">Feedback</label>
-        </div>
-        <button type="submit" class="text-white bg-lime-300">Send</button>
       </div>
     </div>
   </div>
@@ -74,4 +76,13 @@ onMounted(() => {
 input, textarea {
   height: 100%;
 }
+
+.flex > div {
+  width: 100%;
+}
+
+.form {
+  max-width: 30em;
+}
+
 </style>
