@@ -542,8 +542,3 @@ export default {
 }
 </style>
 
-
-.price-container {
-  white-space: pre-line;
-}
-</style>
