@@ -29,15 +29,15 @@ onMounted(() => {
         <h3 class="text-center mb-10 font-bold">Submit general questions, suggestions, and boardgame recommendations below!</h3>
         <div class="flex flex-col gap-4">
           <div class="input-container">
-            <input type="text" id="name" name="name" class="input" required>
+            <input type="text" id="name" name="name" class="input rounded-lg" required>
             <label for="name" class="input-placeholder">Name</label>
           </div>
           <div class="input-container">
-            <input type="email" id="email" name="email" class="input" required>
+            <input type="email" id="email" name="email" class="input rounded-lg" required>
             <label for="email" class="input-placeholder">Email</label>
           </div>
           <div class="input-container">
-            <textarea id="feedback" name="feedback" class="input" required></textarea>
+            <textarea id="feedback" name="feedback" class="input rounded-lg" required></textarea>
             <label for="feedback" class="input-placeholder">Feedback</label>
           </div>
           <button type="submit" class="text-white bg-lime-300 rounded-2xl p-2">Send</button>

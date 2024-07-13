@@ -15,6 +15,7 @@ function init() {
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
   renderer.setClearColor('#FDBA74');
+  renderer.shadowMap.enabled = true;
   container.value.appendChild(renderer.domElement);
 
   // OrbitControls
@@ -26,16 +27,44 @@ function init() {
   controls.maxDistance = 1000;
 
   // Light
-  const light = new THREE.HemisphereLight(0xffffff, 0x444444, 3);
+  const light = new THREE.HemisphereLight(0xffffff, 0x444444, 4);
   light.position.set(0, 10, 0);
   scene.add(light);
 
+  // Directional light
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  directionalLight.position.set(-15, 10, 4);
+  directionalLight.castShadow = true;
+  scene.add(directionalLight);
+
+  directionalLight.shadow.mapSize.width = 4096;
+  directionalLight.shadow.mapSize.height = 4096;
+  directionalLight.shadow.camera.near = 0.5;
+  directionalLight.shadow.camera.far = 500;
+  directionalLight.shadow.camera.left = -10;
+  directionalLight.shadow.camera.right = 10;
+  directionalLight.shadow.camera.top = 10;
+  directionalLight.shadow.camera.bottom = -10;
+  directionalLight.shadow.bias = -0.0001;
+
+  // Plane
+  const planeGeometry = new THREE.PlaneGeometry(200, 200);
+  const planeMaterial = new THREE.MeshPhongMaterial({ color: 0xdb9e5e, depthWrite: false });
+  const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+  plane.rotation.x = - Math.PI / 2;
+  plane.receiveShadow = true;
+  scene.add(plane);
+
   loadModel();
 
-  if (window.innerWidth <= 500) {
-    camera.position.set(0, 0.7, 2);
+  if (window.innerWidth <= 600) {
+    camera.position.set(0, 1, 2.4);
+  } else if (window.innerWidth <= 800) {
+    camera.position.set(0, 1, 1.5);
+  }else if(window.innerWidth <= 1024) {
+    camera.position.set(0, 1, 1.2);
   } else {
-    camera.position.set(0, 0.7, 1);
+    camera.position.set(0, 1, 1);
   }
 
   animate();
@@ -49,15 +78,24 @@ function loadModel() {
 
   const loader = new GLTFLoader();
   loader.load(cupModel, function (gltf) {
-    gltf.scene.scale.set(7, 7, 7);
+    gltf.scene.scale.set(9, 9, 9);
     gltf.scene.position.set(0, -0.2, 0);
+    gltf.scene.traverse(function (node) {
+      if (node instanceof THREE.Mesh) {
+        node.castShadow = true;
+      }
+    });
     scene.add(gltf.scene);
     model = gltf.scene;
 
-    if (window.innerWidth <= 500) {
-      camera.position.set(0, 0.7, 2);
+    if (window.innerWidth <= 600) {
+      camera.position.set(0, 1, 2.4);
+    } else if (window.innerWidth <= 800) {
+      camera.position.set(0, 1, 1.5);
+    } else if (window.innerWidth <= 1024) {
+      camera.position.set(0, 1, 1.2);
     } else {
-      camera.position.set(0, 0.7, 1);
+      camera.position.set(0, 1, 1);
     }
   });
 }
@@ -67,10 +105,11 @@ function animate() {
   controls.update();
 
   if (model) {
-    model.rotation.y += 0.01;
+    model.rotation.y += 0.005;
   }
 
   renderer.render(scene, camera);
+  renderer.shadowMap.enabled = true;
 }
 
 function onWindowResize() {
@@ -78,8 +117,8 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
 
-  // Reload model if width is <= 500
-  if (window.innerWidth <= 500) {
+  // Reload model if width is <= 800
+  if (window.innerWidth <= 800) {
     loadModel();
   }
 }
