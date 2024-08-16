@@ -1,0 +1,281 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Coffee",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816627/products/gxv2vvqlycker3lpzbb2"
+        },
+        {
+            "id": 2,
+            "name": "Specialty Drinks",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/w94fkwz0jfxh2inyayri"
+        },
+        {
+            "id": 3,
+            "name": "Boba",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/nv6jukszjawtkcjyh6q9"
+        },
+        {
+            "id": 4,
+            "name": "Sandwiches & Salads",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/mrum0uyqdhgd8bmoclyo"
+        },
+        {
+            "id": 5,
+            "name": "Hot Bites",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/hijw0pylbqfvwzymzzru"
+        },
+        {
+            "id": 6,
+            "name": "Seasonal Menu",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/mrum0uyqdhgd8bmoclyo"
+        },
+        {
+            "id": 7,
+            "name": "Beer & Wine",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/x5j6pdxas3ekwgend5rz"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Latte",
+            "category_id": 1,
+            "price": {
+                "hot": 4.75,
+                "cold": 5.25
+            },
+            "description": "Espresso with steamed milk.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816627/products/ocioqkhcpydl0wodjdxd.png", 
+            "modelUrl": "src/assets/models/latte.glb"
+        },
+        {
+            "id": 2,
+            "name": "Cappuccino",
+            "category_id": 1,
+            "price": {
+                "hot": 4.50
+            },
+            "description": "Espresso with steamed milk and a layer of foam.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/kakui5gwz9rjhmbqfzvl.png",
+            "modelUrl": "src/assets/models/cappuccino.glb"
+        },
+        {
+            "id": 3,
+            "name": "Americano",
+            "category_id": 1,
+            "price": {
+                "hot": 3.75,
+                "cold": 4.25
+            },
+            "description": "Espresso diluted with hot water.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/bfewdlqtaosksnfwicxc",
+            "modelUrl": "src/assets/models/americano.glb"
+        },
+        {
+            "id": 4,
+            "name": "Rose Latte",
+            "category_id": 2,
+            "price": {
+                "hot": 5.75,
+                "cold": 6.25
+            },
+            "description": "Latte with a subtle rose flavor.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/pwmowojltwrviidzyz2v",
+            "modelUrl": "src/assets/models/rose_latte.glb"
+        },
+        {
+            "id": 5,
+            "name": "Chai",
+            "category_id": 2,
+            "price": {
+                "hot": 5.00,
+                "cold": 5.50
+            },
+            "description": "A spiced tea latte made with a blend of spices.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/xmhvsgxp2xybbsi9uaze",
+            "modelUrl": "src/assets/models/chai.glb"
+        },
+        {
+            "id": 6,
+            "name": "Matcha Latte",
+            "category_id": 2,
+            "price": {
+                "hot": 5.25,
+                "cold": 5.75
+            },
+            "description": "Green tea latte made with matcha powder.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/f5qsbldbcqdjcuvju2bj",
+            "modelUrl": "src/assets/models/matcha.glb"
+        },
+        {
+            "id": 7,
+            "name": "Black Milk Tea",
+            "category_id": 3,
+            "price": {
+                "Medium": 4.25,
+                "Large": 5.25,
+                "Hot": 5.25
+            },
+            "description": "Classic milk tea made with black tea.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/oakxesroiygsrrixbnoa",
+            "modelUrl": "src/assets/models/black_milk_tea.glb"
+        },
+        {
+            "id": 8,
+            "name": "Taro Milk Tea",
+            "category_id": 3,
+            "price": {
+                "Medium": 4.75,
+                "Large": 5.75,
+                "Hot": 5.75
+            },
+            "description": "Caffeine-free, made with taro flavor.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/okfekiiu15n46clddcnm",
+            "modelUrl": "src/assets/models/taro_milk_tea.glb"
+        },
+        {
+            "id": 9,
+            "name": "Thai Milk Tea",
+            "category_id": 3,
+            "price": {
+                "Medium": 4.25,
+                "Large": 5.25,
+                "Hot": 5.25
+            },
+            "description": "Caffeine-free, made with Thai tea flavor.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/jv1xjvcgaiv7gidpbw7l",
+            "modelUrl": "src/assets/models/thai_milk_tea.glb"
+        },
+        {
+            "id": 10,
+            "name": "Pizza Panini",
+            "category_id": 4,
+            "price": 11.00,
+            "description": "Delicious pepperoni and fresh mozzarella pressed to perfection! Served with chips.",
+            "ingredients": [
+                "pepperoni",
+                "fresh mozzarella",
+                "marinara",
+                "olive oil",
+                "Italian herb focaccia",
+                "chips"
+            ],
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/sn5nbjzw8rgquczvubuj",
+            "modelUrl": "src/assets/models/pizza_panini.glb"
+        },
+        {
+            "id": 11,
+            "name": "Mixed Green Salad",
+            "category_id": 4,
+            "price": 6.50,
+            "description": "A refreshing mix of greens. Customize with smoked salmon (+$5.00), boiled egg (+$1.00), or avocado (+$1.50).",
+            "ingredients": [
+                "mixed greens",
+                "tomato",
+                "vegan"
+            ],
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/tuanb7vorbgxyvqhewd6",
+            "modelUrl": "src/assets/models/mixed_green_salad.glb"
+        },
+        {
+            "id": 12,
+            "name": "Avocado Toast",
+            "category_id": 4,
+            "price": 10.00,
+            "description": "Creamy avocado mashed. Add an egg (+$1.00) for extra flavor.",
+            "ingredients": [
+                "avocado",
+                "salt",
+                "pepper",
+                "lemon juice",
+                "olive oil",
+                "toasted heritage wheat",
+                "side salad"
+            ],
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/fxue4rycyyez2yafxkig",
+            "modelUrl": "src/assets/models/avocado_toast.glb"
+        },
+        {
+            "id": 13,
+            "name": "Chicken Poppers",
+            "category_id": 5,
+            "price": 6.00,
+            "description": "Crispy chicken bites.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/mhanemqigwokfxflhucg",
+            "modelUrl": "src/assets/models/chicken_poppers.glb"
+        },
+        {
+            "id": 14,
+            "name": "Fries",
+            "category_id": 5,
+            "price": 5.00,
+            "description": "Crispy seasoned fries.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/ypguuexteizdxo2xvwt5",
+            "modelUrl": "src/assets/models/fries.glb"
+        },
+        {
+            "id": 15,
+            "name": "Pigs in a Blanket",
+            "category_id": 5,
+            "price": 7.00,
+            "description": "Mini hot dogs wrapped in dough.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/o7umsac7cf8aqx0knpvq",
+            "modelUrl": "src/assets/models/pigs_in_a_blanket.glb"
+        },
+        {
+            "id": 16,
+            "name": "Pina Colada",
+            "category_id": 6,
+            "price": 7.00,
+            "description": "Refreshing tropical cocktail with pineapple and coconut.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/ar1s4xftrs5vep8bsbjw",
+            "modelUrl": "src/assets/models/pina_colada.glb"
+        },
+        {
+            "id": 17,
+            "name": "Matcha Lemonade",
+            "category_id": 6,
+            "price": 5.50,
+            "description": "Our freshly squeezed lemonade with a balance of an earthy shot of matcha.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/kxcb6ljqsadjxn5sw7v1",
+            "modelUrl": "src/assets/models/matcha_lemonade.glb"
+        },
+        {
+            "id":18,
+            "name": "Citrus Boba",
+            "category_id": 6,
+            "price": 5.75,
+            "description": "Made with real fruit juice and fruit slices!",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/i3kg0e7wm3vow1besowx",
+            "modelUrl": "src/assets/models/citrus_boba.glb"
+        },
+        {
+            "id": 19,
+            "name": "Babe Rose",
+            "category_id": 7,
+            "price": 18.99,
+            "description": "Light and refreshing rosé wine.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/anr4ufx6wp3rj3trfih8",
+            "modelUrl": "src/assets/models/babe_rose.glb"
+        },
+        {
+            "id": 20,
+            "name": "Archer Roose White",
+            "category_id": 7,
+            "price":  22.50,
+            "description": "Crisp and refreshing white wine.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/hx454f1yk5vulehjrv1h",
+            "modelUrl": "src/assets/models/archer_roose_white.glb"
+        },
+        {
+            "id": 21,
+            "name": "Allagash White",
+            "category_id": 7,
+            "price":  25.75,
+            "description": "Rich and bold white beer.",
+            "image": "https://res.cloudinary.com/dqgpis4fg/image/upload/v1723816610/products/r6gvs4mlhw3t1rdei8n4",
+            "modelUrl": "./src/assets/models/allagash_white.glb"
+        }
+    ]
+}

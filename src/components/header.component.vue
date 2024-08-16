@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Cappuccino from './cup-of-cappuccino.component.vue';
+import Cappuccino from "./cup-of-cappuccino.component.vue";
 import {RouterLink} from "vue-router";
 </script>
 

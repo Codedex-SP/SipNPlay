@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { ref, onMounted } from 'vue';
-import cupModel from './../assets/cup_of_cappuccino.glb?url';
+import cupModel from './../assets/models/cup_of_cappuccino.glb?url';
 
 const container = ref(null);
 let scene, camera, renderer, controls;
